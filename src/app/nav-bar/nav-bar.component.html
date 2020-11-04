@@ -14,15 +14,19 @@
       <!-- Links -->
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link waves-light" mdbWavesEffect
+          <a class="nav-link waves-light" mdbWavesEffect routerLink="home"
             >Home<span class="sr-only">(current)</span></a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link waves-light" mdbWavesEffect>Features</a>
+          <a class="nav-link waves-light" mdbWavesEffect routerLink="login"
+            >Signin</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link waves-light" mdbWavesEffect>Pricing</a>
+          <a class="nav-link waves-light" mdbWavesEffect routerLink="register"
+            >Signup</a
+          >
         </li>
 
         <!-- Dropdown -->
@@ -95,3 +99,5 @@
   </mdb-navbar>
   <!--/.Navbar-->
 </nav>
+
+<router-outlet></router-outlet>
