@@ -203,4 +203,4 @@ router.post("/updatePosition", (req, res) => {
   });
 });
 
-export { router as drivers };
+module.exports = router;
