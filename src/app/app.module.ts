@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { CarsTypeComponent } from './cars-type/cars-type.component';
 import { ResetComponentComponent } from './reset-component/reset-component.component';
 import { NgModule } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -20,14 +21,15 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     NavBarComponent,
     HomePageComponent,
     LoginComponent,
     RegisterComponent,
     ResetComponentComponent,
-  ],
+      CarsTypeComponent
+   ],
   imports: [
     FormsModule,
     HttpClientModule,
