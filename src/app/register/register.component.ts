@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from 'src/app/services/user.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
 })
-export class SignupComponent implements OnInit {
+export class RegisterComponent implements OnInit {
   user = {
     firstName : '',
     lastName : '',
@@ -17,8 +17,7 @@ export class SignupComponent implements OnInit {
     imgUrl : '',
   };
 
-  constructor(private UserService: UserService) { }
-
+  constructor( private UserService: UserService ) { }
   ngOnInit(): void {
   }
  register(){
@@ -39,6 +38,7 @@ export class SignupComponent implements OnInit {
         error => {
           console.log(error);
         })
+        console.log(data)
    this.UserService.sendEmail(data)
    .subscribe(
     res => {
