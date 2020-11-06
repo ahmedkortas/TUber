@@ -1,0 +1,9 @@
+<div class="map-container">
+  <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map>
+</div>
+
+<div id="pac-container">
+  <input #search id="pac-input" type="text" placeholder="Enter a location" />
+</div>
