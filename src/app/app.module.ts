@@ -21,15 +21,15 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
     NavBarComponent,
     HomePageComponent,
     LoginComponent,
     RegisterComponent,
     ResetComponentComponent,
-      CarsTypeComponent
-   ],
+    CarsTypeComponent,
+  ],
   imports: [
     FormsModule,
     HttpClientModule,
