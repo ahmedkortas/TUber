@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const verify = require('./VerificationToken.js')
-const db = require('../Database/index.js')
+const db = require('../Database/Connection.js')
 
 router.get('/',(req,res)=>{
     const sql='SELECT * FROM validations'

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const verify = require('./VerificationToken.js')
-const db = require('../Database/index.js')
+const db = require('../Database/Connection.js')
 
 router.get('/',(req,res)=>{
     const sql='SELECT * FROM requests'
@@ -23,7 +23,7 @@ router.get('/:id',(req,res)=>{
     })
 })
 
-router.post('/:id',(req,res)=>{
+router.post('/',(req,res)=>{
     let newReq = req.body
     const sql='INSERT INTO requests (request,init_position,final_position) VALUES (?, ?, ?)'
     db.query(sql,[newReq.request,newReq.init_position,newReq.final_position],(err,result)=>{
