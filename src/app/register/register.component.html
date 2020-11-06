@@ -1,86 +1,111 @@
 <div class="row">
   <div class="col-md-6 offset-md-3 mt-4">
     <h3>Register New Employer</h3>
-    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <form #f="ngForm">
       <div class="form-group">
         <label for="registerUsername">First Name</label>
         <input
-          type="text"
-          name="Fname"
-          ngModel
-          required
-          #Fname="ngModel"
+        type="text"
+        id="defaultRegisterFormFirstName"
+        class="form-control"
+        placeholder="First name"
+        required
+        [(ngModel)]="user.firstName"
+        name="firstName"
           class="form-control"
           id="registerUsername"
-          placeholder="Enter username"
         />
       </div>
       <div class="form-group">
         <label for="registerUsername">last name</label>
         <input
-          type="text"
-          name="Lname"
-          ngModel
-          required
-          #Lname="ngModel"
+        type="text"
+        id="defaultRegisterFormLastName"
+        class="form-control"
+        placeholder="Last name"
+        required
+        [(ngModel)]="user.lastName"
+        name="lastName"
           class="form-control"
           id="registerUsername"
-          placeholder="Enter username"
         />
       </div>
       <div class="form-group">
         <label for="registerEmail">Email</label>
         <input
-          type="email"
-          name="email"
-          ngModel
-          required
-          #email="ngModel"
+        type="email"
+        id="defaultRegisterFormEmail"
+        class="form-control mb-4"
+        placeholder="E-mail"
+        required
+        [(ngModel)]="user.email"
+        name="email"
           class="form-control"
           id="registerEmail"
-          placeholder="Enter email"
         />
       </div>
       <div class="form-group">
-        <label for="registerUsername">Adress</label>
+        <label for="registerUsername">Address</label>
         <input
-          type="text"
-          name="adress"
-          ngModel
-          required
-          #adress="ngModel"
+        type="password"
+        id="defaultRegisterFormPassword"
+        class="form-control mb-4"
+        placeholder="Password"
+        aria-describedby="defaultRegisterFormPasswordHelpBlock"
+        required
+        [(ngModel)]="user.password"
+        name="password"
           class="form-control"
           id="registerUsername"
-          placeholder="Enter username"
         />
       </div>
       <div class="form-group">
         <label for="registerUsername">Phone number</label>
         <input
-          type="text"
-          name="phoneNumber"
-          ngModel
-          required
-          #phoneNumber="ngModel"
+        type="text"
+        id="defaultRegisterFormPassword"
+        class="form-control mb-4"
+        placeholder="Address"
+        aria-describedby="defaultRegisterFormPasswordHelpBlock"
+        required
+        [(ngModel)]="user.address"
+        name="address"
           class="form-control"
           id="registerUsername"
-          placeholder="Enter username"
         />
       </div>
       <div class="form-group">
         <label for="registerPassword">Password</label>
         <input
-          type="password"
-          name="password"
-          ngModel
-          required
-          #password="ngModel"
+        type="text"
+        id="defaultRegisterPhonePassword"
+        class="form-control mb-4"
+        placeholder="Phone Number"
+        aria-describedby="defaultRegisterFormPhoneHelpBlock"
+        required
+        [(ngModel)]="user.phoneNumber"
+        name="phoneNumber"
           class="form-control"
           id="registerPassword"
-          placeholder="Password"
         />
       </div>
-      <button type="submit"  class="btn btn-primary"  >
+      <div class="form-group">
+        <label for="registerPassword">img Url</label>
+        <input
+        type="text"
+        id="defaultRegisterPhonePassword"
+        class="form-control mb-4"
+        placeholder="Your Image Url"
+        aria-describedby="defaultRegisterFormPhoneHelpBlock"
+        required
+        [(ngModel)]="user.imgUrl"
+        name="imgUrl"
+          class="form-control"
+          id="registerPassword"
+        />
+      </div>
+      <button (click)="register()"  [disabled]="f.invalid" class="btnn btn-primaryy">
+
         Register <i class="fas fa-sign-in-alt"></i>
       </button>
     </form>

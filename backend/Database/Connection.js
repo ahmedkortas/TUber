@@ -3,7 +3,7 @@ const mysql = require('mysql')
 var Connection =mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '123456',
+    password: 'root',
     database:"tuber",
     multipleStatements: true
 })
