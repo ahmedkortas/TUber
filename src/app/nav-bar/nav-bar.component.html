@@ -1,0 +1,41 @@
+<nav>
+  <!--Navbar-->
+  <mdb-navbar
+    SideClass="navbar navbar-expand-lg navbar-dark black lighten-1"
+    [containerInside]="false"
+  >
+    <!-- Navbar brand -->
+    <mdb-navbar-brand
+      ><a class="navbar-brand" href="#">TUBER</a></mdb-navbar-brand
+    >
+
+    <!-- Collapsible content -->
+    <links>
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link waves-light" mdbWavesEffect routerLink="/home"
+            >Home<span class="sr-only">(current)</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect routerLink="/login"
+            >Signin</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect routerLink="/register"
+            >Signup</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect>Rides</a>
+        </li>
+      </ul>
+    </links>
+    <!-- Collapsible content -->
+  </mdb-navbar>
+  <!--/.Navbar-->
+</nav>
+
+<router-outlet></router-outlet>
