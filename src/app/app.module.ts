@@ -6,6 +6,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
 import { AgmDirectionModule } from 'agm-direction';
 import { Routes, RouterModule } from '@angular/router';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -15,6 +17,7 @@ import { RegisterComponent } from './register/register.component';
 import { googleMapsAPIKey } from '../../api/googleMapsAPI';
 import { AutocompleteGoogleDocComponent } from './autocomplete-google-doc/autocomplete-google-doc.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; //import this in the app module !!!important
+import { apiKey, authDomain, projectId, storageBucket } from '../firebase';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -23,7 +26,6 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'requestRide', component: AutocompleteGoogleDocComponent },
   { path: 'rideSummary', component: CarsTypeComponent },
-
 ];
 
 @NgModule({
@@ -38,11 +40,18 @@ const routes: Routes = [
     AutocompleteGoogleDocComponent,
   ],
   imports: [
+    AngularFireModule.initializeApp({
+      apiKey: apiKey,
+      authDomain: authDomain,
+      projectId: projectId,
+      storageBucket: storageBucket,
+    }),
+    AngularFireStorageModule,
+    HttpClientModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
     BrowserModule,
-    FormsModule,
     MDBBootstrapModule.forRoot(),
     RouterModule.forRoot(routes),
     AgmCoreModule.forRoot({
