@@ -1,41 +1,112 @@
-<!-- Default form register -->
-    <form class="text-center border border-light p-5">
-
-      <p class="h4 mb-4">Sign up</p>
-
-      <div class="form-row mb-4">
-        <div class="col">
-          <!-- First name -->
-          <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name">
-        </div>
-        <div class="col">
-          <!-- Last name -->
-          <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name">
-        </div>
+<div class="row">
+  <div class="col-md-6 offset-md-3 mt-4">
+    <h3>Register New Employer</h3>
+    <form #f="ngForm">
+      <div class="form-group">
+        <label for="registerUsername">First Name</label>
+        <input
+        type="text"
+        id="defaultRegisterFormFirstName"
+        class="form-control"
+        placeholder="First name"
+        required
+        [(ngModel)]="user.firstName"
+        name="firstName"
+          class="form-control"
+          id="registerUsername"
+        />
       </div>
-
-      <!-- E-mail -->
-      <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
-
-      <!-- Password -->
-      <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
-      <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-        At least 8 characters and 1 digit
-      </small>
-
-      <!-- Phone number -->
-      <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock">
-      <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
-        Optional - for two-step authentication
-      </small>
-
-      <!-- Newsletter -->
-      <div class="row">
-        <div class="col-md-6 mx-auto d-flex justify-content-center">
-          <mdb-checkbox [default]="true">Subscribe to our newsletter</mdb-checkbox>
-        </div>
+      <div class="form-group">
+        <label for="registerUsername">last name</label>
+        <input
+        type="text"
+        id="defaultRegisterFormLastName"
+        class="form-control"
+        placeholder="Last name"
+        required
+        [(ngModel)]="user.lastName"
+        name="lastName"
+          class="form-control"
+          id="registerUsername"
+        />
       </div>
+      <div class="form-group">
+        <label for="registerEmail">Email</label>
+        <input
+        type="email"
+        id="defaultRegisterFormEmail"
+        class="form-control mb-4"
+        placeholder="E-mail"
+        required
+        [(ngModel)]="user.email"
+        name="email"
+          class="form-control"
+          id="registerEmail"
+        />
+      </div>
+      <div class="form-group">
+        <label for="registerUsername">Address</label>
+        <input
+        type="password"
+        id="defaultRegisterFormPassword"
+        class="form-control mb-4"
+        placeholder="Password"
+        aria-describedby="defaultRegisterFormPasswordHelpBlock"
+        required
+        [(ngModel)]="user.password"
+        name="password"
+          class="form-control"
+          id="registerUsername"
+        />
+      </div>
+      <div class="form-group">
+        <label for="registerUsername">Phone number</label>
+        <input
+        type="text"
+        id="defaultRegisterFormPassword"
+        class="form-control mb-4"
+        placeholder="Address"
+        aria-describedby="defaultRegisterFormPasswordHelpBlock"
+        required
+        [(ngModel)]="user.address"
+        name="address"
+          class="form-control"
+          id="registerUsername"
+        />
+      </div>
+      <div class="form-group">
+        <label for="registerPassword">Password</label>
+        <input
+        type="text"
+        id="defaultRegisterPhonePassword"
+        class="form-control mb-4"
+        placeholder="Phone Number"
+        aria-describedby="defaultRegisterFormPhoneHelpBlock"
+        required
+        [(ngModel)]="user.phoneNumber"
+        name="phoneNumber"
+          class="form-control"
+          id="registerPassword"
+        />
+      </div>
+      <div class="form-group">
+        <label for="registerPassword">img Url</label>
+        <input
+        type="text"
+        id="defaultRegisterPhonePassword"
+        class="form-control mb-4"
+        placeholder="Your Image Url"
+        aria-describedby="defaultRegisterFormPhoneHelpBlock"
+        required
+        [(ngModel)]="user.imgUrl"
+        name="imgUrl"
+          class="form-control"
+          id="registerPassword"
+        />
+      </div>
+      <button (click)="register()"  [disabled]="f.invalid" class="btnn btn-primaryy">
 
+<<<<<<< HEAD
       <!-- Sign up button -->
       <button mdbBtn color="black" block="true" class="my-4" type="submit">Sign up</button>
 
@@ -44,5 +115,10 @@
         <em>Sign up</em> you agree to our
         <a href="" target="_blank">terms of service</a></p>
 
+=======
+        Register <i class="fas fa-sign-in-alt"></i>
+      </button>
+>>>>>>> ea7c4f37a6705b5aed23d502f9bc266fed7ec826
     </form>
-    <!-- Default form register -->
+  </div>
+</div>
