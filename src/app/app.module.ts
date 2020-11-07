@@ -33,7 +33,8 @@ const routes: Routes = [
     LoginComponent,
     RegisterComponent,
     ResetComponentComponent,
-    CarsTypeComponent,AutocompleteGoogleDocComponent
+    CarsTypeComponent
+    // AutocompleteGoogleDocComponent
   ],
   imports: [
     FormsModule,
@@ -42,7 +43,8 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     MDBBootstrapModule.forRoot(),
-    RouterModule.forRoot(routes),AgmCoreModule.forRoot({
+    RouterModule.forRoot(routes),
+    AgmCoreModule.forRoot({
       apiKey: googleMapsAPIKey,
       libraries: ['places'],
     }),
