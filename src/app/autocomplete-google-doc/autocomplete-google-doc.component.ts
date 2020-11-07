@@ -19,6 +19,8 @@ interface Location {
   styleUrls: ['./autocomplete-google-doc.component.css'],
 })
 export class AutocompleteGoogleDocComponent implements OnInit {
+  public rideTime: any;
+  public rideDistance: any;
   service: any;
   travelMode: any;
   defaultBounds: any;
@@ -85,6 +87,7 @@ export class AutocompleteGoogleDocComponent implements OnInit {
     });
   }
   travalDetail() {
+    const me = this;
     var origin = new google.maps.LatLng(
       this.originPlaceId.lat(),
       this.originPlaceId.lng()
@@ -97,17 +100,17 @@ export class AutocompleteGoogleDocComponent implements OnInit {
       {
         origins: [origin],
         destinations: [destination],
-        travelMode: google.maps.TravelMode.DRIVING,
+        travelMode: this.travelMode,
         unitSystem: google.maps.UnitSystem.METRIC,
         avoidHighways: false,
         avoidTolls: false,
       },
       (response, status) => {
         if (status !== 'OK') {
-          console.log('Error from get distance');
           alert('Error was: ' + status);
         } else {
-          console.log(response);
+          me.rideTime = response.rows[0].elements[0].duration;
+          me.rideDistance = response.rows[0].elements[0].distance;
         }
       }
     );
