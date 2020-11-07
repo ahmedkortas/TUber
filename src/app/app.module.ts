@@ -6,6 +6,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
 import { AgmDirectionModule } from 'agm-direction';
 import { Routes, RouterModule } from '@angular/router';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -17,6 +19,8 @@ import { RideRequestComponent } from './ride-request/ride-request.component';
 import { googleMapsAPIKey } from '../../api/googleMapsAPI';
 import { AutocompleteGoogleDocComponent } from './autocomplete-google-doc/autocomplete-google-doc.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; //import this in the app module !!!important
+import { apiKey, authDomain, projectId, storageBucket } from '../firebase';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -37,6 +41,14 @@ const routes: Routes = [
     // AutocompleteGoogleDocComponent
   ],
   imports: [
+    AngularFireModule.initializeApp({
+      apiKey: apiKey,
+      authDomain: authDomain,
+      projectId: projectId,
+      storageBucket: storageBucket,
+    }),
+    AngularFireStorageModule,
+    HttpClientModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
