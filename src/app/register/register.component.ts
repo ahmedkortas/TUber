@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { NgForm } from '@angular/forms';
 import {
   AngularFireStorage,
@@ -9,6 +10,8 @@ import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 import { UserService } from '../services/user.service';
+import { UserService } from 'src/app/services/user.service';
+
 
 @Component({
   selector: 'app-register',
@@ -56,5 +59,34 @@ export class SignupComponent implements OnInit {
         console.log(error);
       }
     );
+
   }
+ register(){
+   const data = {
+    firstName : this.user.firstName,
+    lastName : this.user.lastName,
+    email : this.user.email,
+    password : this.user.password,
+    address : this.user.address,
+    phoneNumber : this.user.phoneNumber,
+    imgUrl : this.user.imgUrl,
+   }
+   this.UserService.createRegister(data)
+      .subscribe(
+        res => {
+          console.log(res);
+        },
+        error => {
+          console.log(error);
+        })
+        console.log(data)
+   this.UserService.sendEmail(data)
+   .subscribe(
+    res => {
+      console.log(res);
+    },
+    error => {
+      console.log(error);
+    })
+ }
 }

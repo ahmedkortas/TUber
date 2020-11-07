@@ -44,4 +44,9 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
 firebase.js
+
+
+#api keys
+/api

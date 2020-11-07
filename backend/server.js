@@ -12,7 +12,9 @@ app.use("/drivers", require("./Routers/Drivers.js"));
 app.use("/requests", require("./Routers/Requests.js"));
 app.use("/validations", require("./Routers/Validations.js"));
 
+
 app.use(express.static("../tuber/dist/angular-tuber-app"));
+
 
 const port = 3000;
 app.listen(port, () => {
