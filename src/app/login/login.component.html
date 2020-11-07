@@ -1,8 +1,7 @@
-
 <div class="row">
-  <div class="col-md-6 offset-md-3 mt-4" >
+  <div class="col-md-6 offset-md-3 mt-4">
     <h3>Login</h3>
-    <form   #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
       <div class="form-group">
         <label for="email">Email</label>
         <input
@@ -32,23 +31,9 @@
       <div class="form-group form-check">
         <a [routerLink]="['/reset-password']">Forgot Password</a>
       </div>
-      <button type="submit" class="btnn btn-primaryy"  >
+      <button type="submit" class="btnn btn-primaryy">
         Login <i class="fas fa-sign-in-alt"></i>
       </button>
     </form>
   </div>
-<<<<<<< HEAD
-
-  <!-- Sign in button -->
-  <button mdbBtn color="black" block="true" class="my-4" type="submit">Sign in</button>
-
-  <!-- Register -->
-  <p>Not a member?
-    <a href="">Register</a>
-  </p>
-
-</form>
-<!-- Default form login -->
-=======
 </div>
->>>>>>> ea7c4f37a6705b5aed23d502f9bc266fed7ec826
