@@ -21,6 +21,8 @@ interface Location {
 export class AutocompleteGoogleDocComponent implements OnInit {
   public rideTime: any;
   public rideDistance: any;
+  showCarType: boolean = false;
+  showDirections: boolean = false;
   service: any;
   travelMode: any;
   defaultBounds: any;
@@ -66,6 +68,9 @@ export class AutocompleteGoogleDocComponent implements OnInit {
             return;
           }
           me.originPlaceId = place.geometry.location;
+          if (this.originPlaceId && this.destinationPlaceId) {
+            this.showDirections = true;
+          }
         });
       });
 
@@ -82,6 +87,9 @@ export class AutocompleteGoogleDocComponent implements OnInit {
             return;
           }
           this.destinationPlaceId = place.geometry.location;
+          if (this.originPlaceId && this.destinationPlaceId) {
+            this.showDirections = true;
+          }
         });
       });
     });
@@ -111,6 +119,7 @@ export class AutocompleteGoogleDocComponent implements OnInit {
         } else {
           me.rideTime = response.rows[0].elements[0].duration;
           me.rideDistance = response.rows[0].elements[0].distance;
+          me.showCarType = true;
         }
       }
     );
