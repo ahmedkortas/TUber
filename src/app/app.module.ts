@@ -18,7 +18,6 @@ import { googleMapsAPIKey } from '../../api/googleMapsAPI';
 import { AutocompleteGoogleDocComponent } from './autocomplete-google-doc/autocomplete-google-doc.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; //import this in the app module !!!important
 import { apiKey, authDomain, projectId, storageBucket } from '../firebase';
-import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -27,7 +26,6 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'requestRide', component: AutocompleteGoogleDocComponent },
   { path: 'rideSummary', component: CarsTypeComponent },
-
 ];
 
 @NgModule({
@@ -54,7 +52,6 @@ const routes: Routes = [
     HttpClientModule,
     ReactiveFormsModule,
     BrowserModule,
-    FormsModule,
     MDBBootstrapModule.forRoot(),
     RouterModule.forRoot(routes),
     AgmCoreModule.forRoot({
