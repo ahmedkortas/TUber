@@ -5,21 +5,31 @@ import { Observable } from 'rxjs';
 const baseUrl = 'http://localhost:3000/users/';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   createLogin(data): Observable<any> {
-    return this.http.post(baseUrl+'login', data);
+    return this.http.post(baseUrl + 'login', data);
   }
 
   createRegister(data): Observable<any> {
-    return this.http.post(baseUrl+'register', data);
+    let obj = {
+      address: data.address,
+      email: data.email,
+      firstName: data.firstName,
+      lastName: data.lastName,
+      password: data.password,
+      phoneNumber: data.phoneNumber,
+      imgUrl: data.imgUrl,
+    };
+    console.log(obj);
+    console.log(baseUrl + 'register');
+    return this.http.post(baseUrl + 'register', data);
   }
-  
+
   sendEmail(data): Observable<any> {
-    return this.http.post(baseUrl+ 'send', data);
+    return this.http.post(baseUrl + 'send', data);
   }
 }

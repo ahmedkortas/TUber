@@ -1,0 +1,51 @@
+<div class="row my-5 d-flex flex-center">
+  <div class="col-md-6">
+    <agm-map
+      #map
+      [mapTypeId]="'terrain'"
+      [latitude]="location.lat"
+      [longitude]="location.lng"
+      [zoom]="12"
+      style="height: 300px"
+    >
+      <agm-direction
+        *ngIf="destinationPlaceId != undefined"
+        [origin]="originPlaceId"
+        [destination]="destinationPlaceId"
+        [travelMode]="travelMode"
+      ></agm-direction>
+    </agm-map>
+  </div>
+  <div class="md-form">
+    <input
+      #originInput
+      id="origin-input"
+      class="form-control"
+      type="text"
+      placeholder="Pick up location"
+      mdbInput
+    />
+    <input
+      #destinationInput
+      id="destination-input"
+      class="form-control"
+      type="text"
+      placeholder="Destination location"
+      mdbInput
+    />
+  </div>
+  <div class="row">
+    <div class="col-md-12 d-flex flex-center">
+      <button
+        mdbBtn
+        color="black"
+        mdbWavesLight
+        type="submit"
+        (click)="travalDetail()"
+      >
+        Require a ride
+      </button>
+    </div>
+  </div>
+</div>
+<app-cars-type *ngIf="destinationPlaceId != undefined"></app-cars-type>
